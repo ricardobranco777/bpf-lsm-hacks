@@ -1,10 +1,11 @@
 # SPDX-License-Identifier: 0BSD
 # Build dependencies: bpftool clang libbpf-devel
 
-ARCH := $(shell uname -m | sed 's/x86_64/x86/;s/aarch64/arm64/;s/arm.*/arm/;s/s390x/s390/;s/ppc64le/powerpc/')
-BPFTOOL ?= bpftool
-CLANG   ?= clang
-CFLAGS  := -g -O2 -Wno-missing-declarations
+ARCH	:= $(shell uname -m | sed 's/x86_64/x86/;s/aarch64/arm64/;s/arm.*/arm/;s/s390x/s390/;s/ppc64le/powerpc/')
+# SUSE systems lack /sbin on PATH
+BPFTOOL ?= $(shell command -v bpftool 2>/dev/null || echo /usr/sbin/bpftool)
+CLANG	?= clang
+CFLAGS	:= -g -O2 -Wno-missing-declarations
 SUDO	:= sudo
 
 .PHONY: all clean load unload

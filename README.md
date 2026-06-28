@@ -47,11 +47,13 @@ make unload
 
 ### Notes
 
-Tested on x86-64 with kernel 7.0.x
+Tested on:
+- s390x: SLES 16.0 with kernel 6.12.x
+- x86_64: Fedora 44 with kernel 7.0.x
 
 ### TODO
 
-- Test on other architectures such as aarch64, ppc64le & s390x.  Maybe also riscv64.
+- Test on other architectures such as aarch64, ppc64le & riscv64.
 - Test on kernels < 6.3
 - Investigate distro-agnostic way to load at boot.
 - Dockerfile to simplify compilation.
