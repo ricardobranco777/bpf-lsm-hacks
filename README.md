@@ -54,6 +54,7 @@ make unload
 ### Notes
 
 Tested on:
+- aarch64: Debian 13 with kernel 7.0.x
 - s390x: SLES 16.0 with kernel 6.12.x
 - x86_64: Fedora 44 with kernel 7.0.x
 

@@ -19,10 +19,10 @@ restrict_userns.bpf.o: restrict_userns.bpf.c vmlinux.h
 	$(CLANG) $(CFLAGS) -target bpf -D__TARGET_ARCH_$(ARCH) -I. -c $< -o $@
 
 clean:
-	rm -f vmlinux.h restrict_userns.bpf.o restrict_userns.skel.h restrict_userns
+	$(RM) vmlinux.h restrict_userns.bpf.o restrict_userns.skel.h restrict_userns
 
 load: restrict_userns.bpf.o
-	$(SUDO) $(BPFTOOL) prog loadall $< /sys/fs/bpf/ autoattach && \
+	@$(SUDO) $(BPFTOOL) prog loadall $< /sys/fs/bpf/ autoattach && \
 	$(SUDO)	$(BPFTOOL) prog list | grep restrict_userns_create
 
 unload:
