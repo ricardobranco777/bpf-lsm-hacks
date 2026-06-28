@@ -50,8 +50,8 @@ make unload
 - Linux kernel with `CONFIG_BPF_LSM=y` & `CONFIG_DEBUG_INFO_BTF=y` enabled.
 - bpftool
 - clang
+- libbpf-devel (libbpf-dev on Debian based systems)
 - make
-- libbpf-devel
 - sudo
 
 ### Notes
