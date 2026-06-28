@@ -60,7 +60,7 @@ Tested on:
 
 ### TODO
 
-- Test on other architectures such as aarch64, ppc64le & riscv64.
+- Test on other architectures such as ppc64le & riscv64.
 - Test on kernels < 6.3
 - Investigate distro-agnostic way to load at boot.
 - Dockerfile to simplify compilation.
