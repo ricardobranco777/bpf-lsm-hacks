@@ -15,9 +15,15 @@ sysctl because it also applies to root.
 
 ### Requirements
 
-- Linux kernel >= 6.3
-- `CONFIG_BPF_LSM=y`
-- `lsm=...,bpf` in kernel cmdline
+- Linux kernel with `CONFIG_BPF_LSM=y` & `CONFIG_DEBUG_INFO_BTF=y` enabled.
+- `bpf` in `lsm` parameter in kernel cmdline.
+
+### Build requirements
+
+- bpftool
+- clang
+- libbpf-devel (libbpf-dev on Debian based systems)
+- make
 
 ### Build
 
@@ -44,15 +50,6 @@ The restriction survives loader exit and persists until unloaded or the system r
 ```sh
 make unload
 ```
-
-### Dependencies
-
-- Linux kernel with `CONFIG_BPF_LSM=y` & `CONFIG_DEBUG_INFO_BTF=y` enabled.
-- bpftool
-- clang
-- libbpf-devel (libbpf-dev on Debian based systems)
-- make
-- sudo
 
 ### Notes
 
