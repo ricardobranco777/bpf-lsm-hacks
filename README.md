@@ -45,6 +45,15 @@ The restriction survives loader exit and persists until unloaded or the system r
 make unload
 ```
 
+### Dependencies
+
+- Linux kernel with `CONFIG_BPF_LSM=y` & `CONFIG_DEBUG_INFO_BTF=y` enabled.
+- bpftool
+- clang
+- make
+- libbpf-devel
+- sudo
+
 ### Notes
 
 Tested on:
